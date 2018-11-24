@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Welcome to Slotify</title>
 </head>
-<body>Index page
+<body>Index page 
     <form action="">
         
     </form>
