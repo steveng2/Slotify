@@ -1,10 +1,10 @@
 <?php 
    include("includes/config.php"); include("includes/classes/Account.php"); 
-    include("includes/classes/Constants.php");
+   include("includes/classes/Constants.php");
     $account = new Account($con);
  
-    include("includes/handlers/register-handler.php");
-    include("includes/handlers/login-handler.php");  
+   include("includes/handlers/register-handler.php");
+   include("includes/handlers/login-handler.php");  
 
 function getInputValue($name) {
     if(isset($_POST[$name])) {
@@ -42,7 +42,7 @@ function getInputValue($name) {
       <form id="registerForm" action="register.php" method="POST">
            <h2>Create your free account</h2>
            <p>
-               <?php echo $account->getError( Constants::$usernameCharacters); ?>
+               <?php echo $account->getError( Constants::$usernameCharacters); ?>     <?php echo $account->getError( Constants::$usernameTaken); ?>
                <label for="username">Username</label>
                <input id="username" name="username" type="text" placeholder="e.g bartSimpson" value="<?php echo  getInputValue('username') ?>" required>
            </p> 
@@ -61,7 +61,7 @@ function getInputValue($name) {
            </p>
            <p>
               <?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
-              <?php echo $account->getError(Constants::$emailsInvalid); ?>
+              <?php echo $account->getError(Constants::$emailsInvalid); ?> <?php echo $account->getError(Constants::$emailTaken); ?>
                <label for="email">Email</label>
                <input id="email" name="email" type="email" placeholder="e.g bart@spingfield.com" value="<?php getInputValue('email') ?>" required> 
            </p> 
