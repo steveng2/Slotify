@@ -10,6 +10,8 @@ class Constants {
     public static $firstNameCharacters = "Your first name must be between 5 and 25 characters";
     public static $usernameCharacters = "Your username must be between 5 and 25 characters";
     public static $usernameTaken = "Your username already exists";
+    
+    public static $loginFailed = "Your username or password was incorrect";
    
      
 }
